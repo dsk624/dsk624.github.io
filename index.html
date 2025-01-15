@@ -36,15 +36,15 @@
         <button class="call-btn">拨打车主电话</button></div>
 <script>
 function notifyOwner() {
-    fetch("https://wxpusher.zjiecode.com/api/send/message", {
-        method: "POST",
+    fetch("https://api.dwo.cc/api/fan?text=%E4%BD%A0%E5%A5%BD", {
+        method: "GET",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({
-            appToken: "AT_uOKPJVyVlxVd************HKaA",
-            content: "您好，有人需要您挪车，请及时处理。",
-            contentType: 1,
-            uids: ["UID_B0GShlS*************Dms","UID_Rh*********B5QK"]
-        })
+        // body: JSON.stringify({
+        //     appToken: "AT_uOKPJVyVlxVd************HKaA",
+        //     content: "您好，有人需要您挪车，请及时处理。",
+        //     contentType: 1,
+        //     uids: ["UID_B0GShlS*************Dms","UID_Rh*********B5QK"]
+        // })
     })
     .then(response => response.json())
     .then(data => {
