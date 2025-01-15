@@ -32,18 +32,18 @@
 <div class="container">
         <h1>通知车主挪车</h1>
         <p>如需通知车主，请点击以下按钮</p>
-        <button class="notify-btn">通知车主挪车</button>
-        <button class="call-btn">拨打车主电话</button></div>
+        <button class="notify-btn" onclick="notifyOwner()">通知车主挪车</button>
+        <button class="call-btn" onclick="callOwner()">拨打车主电话</button>
 <script>
 function notifyOwner() {
     fetch("https://wxpusher.zjiecode.com/api/send/message", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
-            appToken: "AT_uOKPJVyVlxVd************HKaA",
+            appToken: "AT_5U5qctAaNjKEWbd3YQbL3LgCKL2eQYKR",
             content: "您好，有人需要您挪车，请及时处理。",
             contentType: 1,
-            uids: ["UID_B0GShlS*************Dms","UID_Rh*********B5QK"]
+            uids: ["UID_te6hUJQwzlsfLIVAkXuDnYo1L1Pm"]
         })
     })
     .then(response => response.json())
@@ -58,8 +58,7 @@ function notifyOwner() {
         console.error("Error sending notification:", error);
         alert("通知发送出错，请检查网络连接。");
     });
-}
-notifyOwner();
+} 
 function callOwner() {
     window.location.href = "tel:1318888888";
 }
